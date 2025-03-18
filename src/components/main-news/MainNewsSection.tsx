@@ -1,4 +1,4 @@
-// компонет для отображения списка главных новостей, фильтров и курсов валют
+// компонент для отображения списка главных новостей, фильтров и курсов валют
 
 import { useState } from "react";
 import { MainNewsFilters } from "./MainNewsFilters";
@@ -6,7 +6,7 @@ import { MainNewsList } from "./MainNewsList";
 import { CurrencyRates } from "./CurrencyRates";
 
 export const MainNewsSection = () => {
-  const [selectFilter, setSelectedFilter] = useState<HTMLElement>();
+  const [selectFilter, setSelectedFilter] = useState<EventTarget>();
 
   const filters = ["Новости", "Жизнь", "Рекомендуем"];
 

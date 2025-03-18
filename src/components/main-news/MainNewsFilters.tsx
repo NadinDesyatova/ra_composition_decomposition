@@ -4,8 +4,8 @@ import React from "react";
 
 type MainNewsFiltersProps = {
   listFilters: Array<string>,
-  changeFilter: (target: EventTarget) => void,
-  selectetedFilter: HTMLElement | undefined
+  changeFilter: React.Dispatch<React.SetStateAction<EventTarget | undefined>>,
+  selectetedFilter: EventTarget | undefined
 };
 
 export const MainNewsFilters = ({
@@ -17,14 +17,14 @@ export const MainNewsFilters = ({
     changeFilter(target);
     (target as HTMLElement).classList.add("select");
     if (selectetedFilter !== undefined) {
-      selectetedFilter.classList.remove("select");
+      (selectetedFilter as HTMLElement).classList.remove("select");
     }
   };
 
   return (
     <ul className="main-news_filters">
-      {listFilters.map((elem) => (
-        <li key={listFilters.indexOf(elem)} className="filter-name" onClick={handlerClick}>
+      {listFilters.map((elem, i) => (
+        <li key={i} className="filter-name" onClick={handlerClick}>
           {elem}
         </li>
       ))}

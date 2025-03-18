@@ -1,4 +1,4 @@
-// отображет курсы валют
+// отображает курсы валют
 
 import { CurrencyRateItem } from "./CurrencyRateItem";
 
@@ -12,8 +12,8 @@ type CurrencyRatesProps = {
 export const CurrencyRates = ({ items }: CurrencyRatesProps) => {
   return (
     <ul className="currency_list">
-      {items.map((elem) => (
-        <CurrencyRateItem name={elem.name} value={elem.value} key={items.indexOf(elem)}/>
+      {items.map((elem, i) => (
+        <CurrencyRateItem name={elem.name} value={elem.value} key={i}/>
       ))}
     </ul>
   );

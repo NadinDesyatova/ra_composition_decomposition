@@ -12,8 +12,8 @@ type MainNewsListProps = {
 
 export const MainNewsList = ({listNews}: MainNewsListProps) => {
   return (
-    <>
+    <ul>
       {listNews.map((elem, i) => <MainNewsItem picture={elem.picture} text={elem.text} link={elem.link} key={i} />)}
-    </>
+    </ul>
   );
 };

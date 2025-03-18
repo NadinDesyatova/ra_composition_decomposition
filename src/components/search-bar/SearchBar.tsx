@@ -6,7 +6,7 @@ import { SearchField } from "./SearchField";
 import { SearchFilters } from "./SearchFilters";
 
 export const SearchBar = () => {
-  const [selectFiler, setSelectFiler] = useState<HTMLElement | undefined>();
+  const [selectFilter, setSelectFilter] = useState<EventTarget | undefined>();
 
   const [searchQuery, setSearchQuery] = useState<string>();
   console.log(searchQuery);
@@ -21,7 +21,7 @@ export const SearchBar = () => {
 
   return (
     <div className="search-bar_section">
-      <SearchFilters setSelectFiler={setSelectFiler} selectFiler={selectFiler} filtersList={filtersList} />
+      <SearchFilters setSelectFilter={setSelectFilter} selectFilter={selectFilter} filtersList={filtersList} />
       <SearchField setSearchQuery={setSearchQuery} />
       <RandomPhrase randomPhraseList={randomPhraseList} />
     </div>

@@ -6,6 +6,6 @@ type RandomPhraseProps = {
   
 export const RandomPhrase = ({randomPhraseList}: RandomPhraseProps) => { 
   const randomIdPhrase = Math.floor(Math.random() * randomPhraseList.length);
-  return <div>Найдётся всё. Например: {randomPhraseList[randomIdPhrase]}</div>;
+  return <div key={randomIdPhrase}>Найдётся всё. Например: {randomPhraseList[randomIdPhrase]}</div>;
 };
   

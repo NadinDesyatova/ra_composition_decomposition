@@ -55,8 +55,8 @@ export const ThemesWithReadyTabs = () => {
 
   return (
     <div className="themes_section">
-      {content.map((elem) => (
-        <ThemeWithReadyTabs type={elem.type}>{elem.children}</ThemeWithReadyTabs>
+      {content.map((elem, i) => (
+        <ThemeWithReadyTabs type={elem.type} key={i}>{elem.children}</ThemeWithReadyTabs>
       ))}
     </div>
   );

@@ -3,29 +3,28 @@
 import React from "react";
 
 type SearchFiltersProps = {
-  setSelectFiler: (target: EventTarget) => void,
-  selectFiler: HTMLElement | undefined,
+  setSelectFilter: (React.Dispatch<React.SetStateAction<EventTarget | undefined>>),
+  selectFilter: EventTarget | undefined,
   filtersList: Array<string>
 };
 
 export const SearchFilters = ({
-  setSelectFiler,
-  selectFiler,
+  setSelectFilter,
+  selectFilter,
   filtersList,
 }: SearchFiltersProps) => {
   const handlerClick = ({ target }: React.MouseEvent<HTMLElement>) => {
-    console.log(target, typeof setSelectFiler);
-    setSelectFiler(target);
+    setSelectFilter(target);
     (target as HTMLElement).classList.add("select");
-    if (selectFiler !== undefined) {
-      selectFiler.classList.remove("select");
+    if (selectFilter !== undefined) {
+      (selectFilter as HTMLElement).classList.remove("select");
     }
   };
 
   return (
     <ul className="search-filters_list">
-      {filtersList.map((elem) => (
-        <li className="search-filter_list-item" onClick={handlerClick} key={filtersList.indexOf(elem)}>
+      {filtersList.map((elem, i) => (
+        <li className="search-filter_list-item" onClick={handlerClick} key={i}>
           {elem}
         </li>
       ))}
